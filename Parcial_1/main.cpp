@@ -18,26 +18,38 @@ int main()
             cout << "Ingrese la distancia entre los caniones: "; cin >> dist;
             tiempo_lim=2.5; //El disparo debe llegar antes de 2.5 s
             ang1=45;
-            if (altura1>altura2) {
+            if (altura1>altura2 || altura1<altura2) { //cuando altura del ofensivo es mayor a la altura del defensivo
                 double cos,det,det2;
                 cos=sqrt(2)/2;
-                cout<<cos<<endl;
-                for(vel_ini1=0.01;tiempo<2.5;vel_ini1=vel_ini1+0.01) {
+                for(vel_ini1=0.001;tiempo<2.5;vel_ini1=vel_ini1+0.001) {
                     det=((vel_ini1*cos)*(vel_ini1*cos))-(4*(g/2)*(altura2-altura1));
                     det2=vel_ini1*cos+sqrt(det);
                     tiempo=det2/g;
                     tiempo1=dist/(cos*vel_ini1);
-                    if(abs(tiempo-tiempo1)<=0.01) {
-                        cout<<"La vel inicial es: "<<vel_ini1<<endl;
+                    if(abs(tiempo-tiempo1)<=0.001) {
+                        cout<<"La vel inicial con 45 grados es: "<<vel_ini1<<endl;
                     }
                 }
-            }
-            if (altura1<altura2) {
-                for (;; ) {
-
+//                cos=0.642787;
+//                for(vel_ini1=0.001;tiempo<2.5;vel_ini1=vel_ini1+0.001) {
+//                    det=((vel_ini1*cos)*(vel_ini1*cos))-(4*(g/2)*(altura2-altura1));
+//                    det2=vel_ini1*cos+sqrt(det);
+//                    tiempo=det2/g;
+//                    tiempo1=dist/(cos*vel_ini1);
+//                    if(abs(tiempo-tiempo1)<=0.001) {
+//                        cout<<"La vel inicial con 50 grados es: "<<vel_ini1<<endl;
+//                    }
+//                }
+//                cos=0.7660;
+//                for(vel_ini1=0.001;tiempo<2.5;vel_ini1=vel_ini1+0.001) {
+//                    det=((vel_ini1*cos)*(vel_ini1*cos))-(4*(g/2)*(altura2-altura1));
+//                    det2=vel_ini1*cos+sqrt(det);
+//                    tiempo=det2/g;
+//                    tiempo1=dist/(cos*vel_ini1);
+//                    if(abs(tiempo-tiempo1)<=0.001) {
+//                        cout<<"La vel inicial con 40 grados es: "<<vel_ini1<<endl;
+//                    }
                 }
-            }
-
         }
         break;
 
