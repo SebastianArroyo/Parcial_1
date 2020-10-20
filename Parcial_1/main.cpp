@@ -19,7 +19,7 @@ int main()
             tiempo_lim=2.5; //El disparo debe llegar antes de 2.5 s
             float vc=0,vs=0,det=0,det2=0,a=0,b=0,c=0;
             for(vel_ini1=0.01;vel_ini1>0;vel_ini1+=0.01) {
-                for (ang1=0;(ang1>=0 && ang1<=90) || (ang1>270 && ang1<360);ang1++) {
+                for (ang1=0;(ang1>-90 && ang1<=90);ang1++) {
                     if (ang1==90) {
                         ang1=-89;
                     }
